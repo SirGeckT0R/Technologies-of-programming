@@ -7,7 +7,9 @@ using namespace std;
  
 int main() {
 	try {
-		HolidayList holidaylist= HolidayList(2022);
+
+		Holiday* holidayList=HolidayList(2022);
+		//HolidayList holidaylist = HolidayList(2022);
 
 		Date date;
 				
