@@ -41,7 +41,7 @@ int* HolidayList::computeCatholicEasterDate(int year) {
 	int e = (2 * b + 4 * c + 6 * d + 5) % 7;
 	int f = d + e;
 	if (f <= 9) {
-		easterDate[0] = 22 + f;
+		easterDate[0] = 22 + f ;
 		easterDate[1] = 3;
 		return easterDate;
 	}
