@@ -1,4 +1,5 @@
 #include <iostream>
+#include <conio.h>
 #include "Date.h"
 #include "ExceptionDate.h"
 #include "HolidayList.h"
@@ -13,11 +14,21 @@ int main() {
 		HolidayList holidaylist = HolidayList(2022);
 
 		Date startDate, endDate;
-		string inputString;
+		char inputString[10];
 
 		cout << "Enter the starting date(example: 1 1 2022) ";
-		getline(cin,inputString);
+		cin.getline(inputString,10);
 		parseStringInDate(inputString, startDate);
+
+		cout << "Enter the ending date(example: 1 1 2022) ";
+		cin.getline(inputString, 10);
+		parseStringInDate(inputString, endDate);
+
+		bool isSaturdayAWeekend = false;
+		cout << "Should I consider Saturday a weekend?(y,n)";
+		if (_getch() == 'y') {
+			isSaturdayAWeekend = true;
+		}
 
 		Date date;
 				

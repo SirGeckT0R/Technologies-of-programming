@@ -5,8 +5,8 @@
 using namespace std;
 
 struct Holiday {
-	int day;
-	Month month;
+	int day=1;
+	Month month=Month::JAN;
 	const char* name=new char[20];
 };
 
@@ -17,6 +17,7 @@ class HolidayList {
 	Holiday holidays[HOLIDAY_AMOUNT];
 public:
 	HolidayList(int year);
+private:
 	int* computeCatholicEasterDate(int year);
 	int* computeOrthodoxEasterDate(int year);
 	int* computeRadunitsa(int EasterDay, int EasterMonth);

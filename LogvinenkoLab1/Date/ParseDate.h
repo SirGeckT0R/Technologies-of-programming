@@ -3,4 +3,5 @@
 #include "Date.h"
 using namespace std;
 
-void parseStringInDate(string inputString,Date &startDate);
+void parseStringInDate(char* inputString,Date &startDate);
+char* findCharachterAfterWhitespace(char* string);
