@@ -12,18 +12,20 @@ struct Holiday {
 
 
 const int HOLIDAY_AMOUNT = 12;
-//
-//class HolidayList {
-//	Holiday* holidayList[HOLIDAY_AMOUNT];
-//public:
-//	HolidayList(int year);
-//	int* computeCatholicEasterDate(int year);
-//	int* computeOrthodoxEasterDate(int year);
-//	int* computeRadunitsa(int EasterDay, int EasterMonth);
-//};	
 
-Holiday* HolidayList( int year);
-int* computeOrthodoxEasterDate(int year);
-int* computeCatholicEasterDate(int year);
-int* computeRadunitsa(int EasterDay, int EasterMonth);
+class HolidayList {
+	Holiday holidays[HOLIDAY_AMOUNT];
+public:
+	HolidayList(int year);
+	int* computeCatholicEasterDate(int year);
+	int* computeOrthodoxEasterDate(int year);
+	int* computeRadunitsa(int EasterDay, int EasterMonth);
+};	
+
+
+//
+//Holiday* HolidayList( int year);
+//int* computeOrthodoxEasterDate(int year);
+//int* computeCatholicEasterDate(int year);
+//int* computeRadunitsa(int EasterDay, int EasterMonth);
 

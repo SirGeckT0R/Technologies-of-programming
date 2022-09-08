@@ -127,6 +127,7 @@
     <ClCompile Include="DateValidator.cpp" />
     <ClCompile Include="ExceptionDate.cpp" />
     <ClCompile Include="HolidayList.cpp" />
+    <ClCompile Include="ParseDate.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -135,6 +136,7 @@
     <ClInclude Include="ExceptionDate.h" />
     <ClInclude Include="HolidayList.h" />
     <ClInclude Include="Month.h" />
+    <ClInclude Include="ParseDate.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
