@@ -137,6 +137,7 @@
     <ClInclude Include="HolidayList.h" />
     <ClInclude Include="Month.h" />
     <ClInclude Include="ParseDate.h" />
+    <ClInclude Include="Weekdays.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

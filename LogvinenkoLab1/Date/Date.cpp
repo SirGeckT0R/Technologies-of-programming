@@ -17,7 +17,7 @@ Date::Date() {
 Date::Date(int day, int month, int year) {
 	setYear(year);
 	setMonth(month);
-	setDate(day, month, year);
+	setDay(day, month, year);
 }
 
 Date::~Date() {}
@@ -33,7 +33,7 @@ void Date::setYear(int year) {
 	if (validator.isYear(year))
 		this->year = year;
 }
-void Date::setDate(int day, int month, int year) {
+void Date::setDay(int day, int month, int year) {
 	int lastMonthDay[12] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 	DateValidator validator;
 	if (validator.isYear(year) && validator.isMonth(month)) {

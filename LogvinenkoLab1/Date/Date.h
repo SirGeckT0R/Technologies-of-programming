@@ -14,7 +14,7 @@ public:
 
 	void setMonth(int month);
 	void setYear(int year);
-	void setDate(int day, int month=1, int year=2022);
+	void setDay(int day, int month=1, int year=2022);
 
 	int getDay();
 	Month getMonth();

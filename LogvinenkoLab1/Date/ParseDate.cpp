@@ -3,9 +3,11 @@
 #include "Date.h"
 
 void parseStringInDate(char* inputString, Date &Date) {
-	inputString = findCharachterAfterWhitespace(inputString);
+	if (inputString[0] == ' ') {
+		inputString = findCharachterAfterWhitespace(inputString);
+	}
 	int day = atoi(static_cast<const char*>(inputString));
-	Date.setDate(day);
+	Date.setDay(day);
 	cout << Date.getDay() << endl;
 	inputString = findCharachterAfterWhitespace(inputString);
 	int month = atoi(static_cast<const char*>(inputString));
