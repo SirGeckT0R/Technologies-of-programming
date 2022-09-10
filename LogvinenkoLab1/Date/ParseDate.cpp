@@ -1,6 +1,4 @@
 #include "ParseDate.h"
-#include <string>
-#include "Date.h"
 
 void parseStringInDate(char* inputString, Date &Date) {
 	if (inputString[0] == ' ') {

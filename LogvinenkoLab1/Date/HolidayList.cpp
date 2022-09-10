@@ -1,7 +1,4 @@
-#include <iostream>
 #include "HolidayList.h"
-
-
 
 HolidayList::HolidayList(int year) {
 	int* cathEasterDate = this->computeCatholicEasterDate(year);

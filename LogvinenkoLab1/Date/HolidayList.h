@@ -10,7 +10,6 @@ struct Holiday {
 	const char* name=new char[20];
 };
 
-
 const int HOLIDAY_AMOUNT = 12;
 
 class HolidayList {

@@ -4,6 +4,7 @@
 #include "ExceptionDate.h"
 #include "HolidayList.h"
 #include "ParseDate.h"
+#include "HolidaysAndWorkdaysInRange.h"
 
 using namespace std;
  
@@ -25,25 +26,23 @@ int main() {
 		cin.getline(inputString, 10);
 		parseStringInDate(inputString, endDate);
 
-		int startDateYear = startDate.getYear(); int endDateYear = endDate.getYear();
-		int amountOfYears = endDateYear - startDateYear + 1;
-		HolidayList* holidays = new HolidayList[amountOfYears];
-		if (amountOfYears==1) {
-			holidays[0] = HolidayList(startDateYear);
-		}
-		else {
-			for (int i = 0; i < amountOfYears; i++) {
-				holidays[i] = HolidayList(startDateYear + i);
-			}
-		}
-
-
 		bool isSaturdayAWeekend = false;
 		cout << "Should I consider Saturday a weekend?(y,n)";
 		if (_getche() == 'y') {
 			isSaturdayAWeekend = true;
 		}
 		cout << endl;
+
+		int startDateYear = startDate.getYear(); int endDateYear = endDate.getYear();
+		int amountOfYears = endDateYear - startDateYear + 1;
+		HolidayList* holidays = new HolidayList[amountOfYears];
+		for (int i = 0; i < amountOfYears; i++) {
+			holidays[i] = HolidayList(startDateYear + i);
+		}
+
+		printHolidaysAndWorkdays(startDate,endDate,holidays,amountOfYears,isSaturdayAWeekend);
+
+
 
 		tm time_in = { 0, 0, 0, 9, 8, 2022 - 1900 }; 
 		time_t time_buff = mktime(&time_in);

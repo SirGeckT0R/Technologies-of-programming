@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include "Date.h"
+#include "Date.h"
 using namespace std;
 
 void parseStringInDate(char* inputString,Date &startDate);
