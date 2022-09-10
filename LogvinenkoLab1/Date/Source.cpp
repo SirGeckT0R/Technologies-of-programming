@@ -11,7 +11,7 @@ int main() {
 	try {
 
 		/*Holiday* holidayList=HolidayList(2022);*/
-		HolidayList holidaylist = HolidayList(2022);
+		/*HolidayList holidaylist = HolidayList(2022);*/
 
 		Date startDate, endDate;
 		char inputString[10];
@@ -25,9 +25,22 @@ int main() {
 		cin.getline(inputString, 10);
 		parseStringInDate(inputString, endDate);
 
+		int startDateYear = startDate.getYear(); int endDateYear = endDate.getYear();
+		int amountOfYears = endDateYear - startDateYear + 1;
+		HolidayList* holidays = new HolidayList[amountOfYears];
+		if (amountOfYears==1) {
+			holidays[0] = HolidayList(startDateYear);
+		}
+		else {
+			for (int i = 0; i < amountOfYears; i++) {
+				holidays[i] = HolidayList(startDateYear + i);
+			}
+		}
+
+
 		bool isSaturdayAWeekend = false;
 		cout << "Should I consider Saturday a weekend?(y,n)";
-		if (_getch() == 'y') {
+		if (_getche() == 'y') {
 			isSaturdayAWeekend = true;
 		}
 		cout << endl;

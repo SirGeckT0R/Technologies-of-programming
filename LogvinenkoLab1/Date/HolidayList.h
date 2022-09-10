@@ -16,7 +16,8 @@ const int HOLIDAY_AMOUNT = 12;
 class HolidayList {
 	Holiday holidays[HOLIDAY_AMOUNT];
 public:
-	HolidayList(int year);
+	HolidayList(int year=2022);
+	Holiday getHolidayByIndex(int index);
 private:
 	int* computeCatholicEasterDate(int year);
 	int* computeOrthodoxEasterDate(int year);

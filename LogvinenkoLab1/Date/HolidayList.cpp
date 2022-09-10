@@ -103,6 +103,11 @@ int* HolidayList::computeRadunitsa(int EasterDay,int EasterMonth) {
 }
 
 
+Holiday HolidayList::getHolidayByIndex(int index) {
+	return holidays[index];
+}
+
+
 //Holiday* HolidayList(int year) {
 //	int* cathEasterDate = computeCatholicEasterDate(year);
 //	int catholicEasterDay = cathEasterDate[0];
