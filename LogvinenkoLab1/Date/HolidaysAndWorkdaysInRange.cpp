@@ -8,7 +8,7 @@ void printHolidaysAndWorkdays(Date startDate, Date endDate, HolidayList* holiday
 	Date currentDate = startDate;
 	int currentDay, currentMonth, currentYear;
 	int holidayIndex = 0;
-	char** listOfHolidays=new char*[amountOfYears * HOLIDAY_AMOUNT];
+	string* listOfHolidays=new string[amountOfYears * HOLIDAY_AMOUNT];
 	int listOfHolidaysIndex = 0;
 	bool hasYearChanged = false;
 
@@ -33,7 +33,7 @@ void printHolidaysAndWorkdays(Date startDate, Date endDate, HolidayList* holiday
 			currentHolidayMonth =static_cast<int>(currentHoliday.month);
 			
 			if (currentDay == currentHolidayDay && currentMonth == currentHolidayMonth) {
-				strcpy_s(listOfHolidays[listOfHolidaysIndex], MAX_NAME_LENGTH - 1, currentHoliday.name);
+				listOfHolidays[listOfHolidaysIndex] = currentHoliday.name;
 				listOfHolidaysIndex++;
 				isHoliday = true;
 				amountOfWeekends++;

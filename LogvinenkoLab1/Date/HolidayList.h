@@ -12,7 +12,7 @@ const int MAX_NAME_LENGTH = 51;
 struct Holiday {
 	int day=1;
 	Month month=Month::JAN;
-	const char* name=new char[MAX_NAME_LENGTH];
+	string name;
 };
 
 class HolidayList {

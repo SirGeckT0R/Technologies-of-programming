@@ -22,7 +22,7 @@ HolidayList::HolidayList(int year) {
 	holidays[4] = { 9,static_cast<Month>(5),"Victory Day" };
 	holidays[5] = { 3,static_cast<Month>(7),"Independence Day" };
 	holidays[6] = { 7,static_cast<Month>(11),"October Revolution Day" };
-	holidays[7] = { 25,static_cast<Month>(1),"Catholic Christmas" };
+	holidays[7] = { 25,static_cast<Month>(12),"Catholic Christmas" };
 	holidays[8] = { catholicEasterDay ,static_cast<Month>(catholicEasterMonth),"Catholic Easter" };
 	holidays[9] = { catholicRadunitsaDay ,static_cast<Month>(catholicRadunitsaMonth),"Catholic Radunitsa" };
 	holidays[10] = { orthodoxEasterDay,static_cast<Month>(orthodoxEasterMonth),"Orthodox Easter" };
