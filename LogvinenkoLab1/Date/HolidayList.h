@@ -4,13 +4,16 @@
 #include "Month.h"
 using namespace std;
 
+
+
+const int HOLIDAY_AMOUNT = 12;
+const int MAX_NAME_LENGTH = 51;
+
 struct Holiday {
 	int day=1;
 	Month month=Month::JAN;
-	const char* name=new char[20];
+	const char* name=new char[MAX_NAME_LENGTH];
 };
-
-const int HOLIDAY_AMOUNT = 12;
 
 class HolidayList {
 	Holiday holidays[HOLIDAY_AMOUNT];

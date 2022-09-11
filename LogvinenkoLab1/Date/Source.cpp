@@ -46,13 +46,6 @@ int main() {
 
 
 
-		tm time_in = { 0, 0, 0, 9, 8, 2022 - 1900 }; 
-		time_t time_buff = mktime(&time_in);
-
-		struct tm time_out;
-		localtime_s(&time_out,&time_buff);
-
-
 		Date date;
 				
 		cout << date.toCharArray() << endl;
