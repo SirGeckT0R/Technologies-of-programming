@@ -15,16 +15,18 @@ int main() {
 		/*HolidayList holidaylist = HolidayList(2022);*/
 
 		Date startDate, endDate;
-		char inputString[10];
+		char inputString[11];
 
 		cout << "Enter the starting date(example: 1 1 2022) ";
-		cin.getline(inputString,10);
+		cin.getline(inputString,11);
 
 		parseStringInDate(inputString, startDate);
 
 		cout << "Enter the ending date(example: 1 1 2022) ";
-		cin.getline(inputString, 10);
+		cin.getline(inputString, 11);
 		parseStringInDate(inputString, endDate);
+
+		checkDates(startDate, endDate);
 
 		bool isSaturdayAWeekend = false;
 		cout << "Should I consider Saturday a weekend?(y,n)";
@@ -46,10 +48,6 @@ int main() {
 
 
 
-		Date date;
-				
-		cout << date.toCharArray() << endl;
-		cout << date.toString() << endl;
 	}
 	catch(ExceptionDate& e)
 	{
