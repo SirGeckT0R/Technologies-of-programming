@@ -11,18 +11,15 @@ using namespace std;
 int main() {
 	try {
 
-		/*Holiday* holidayList=HolidayList(2022);*/
-		/*HolidayList holidaylist = HolidayList(2022);*/
-
 		Date startDate, endDate;
 		char inputString[11];
 
-		cout << "Enter the starting date(example: 1 1 2022) ";
+		cout << "Enter the starting date after year 1900 and before 2023(example: 1 1 2022) ";
 		cin.getline(inputString,11);
 
 		parseStringInDate(inputString, startDate);
 
-		cout << "Enter the ending date(example: 1 1 2022) ";
+		cout << "Enter the ending date after year 1900 and before 2023(example: 1 1 2022) ";
 		cin.getline(inputString, 11);
 		parseStringInDate(inputString, endDate);
 
@@ -33,7 +30,7 @@ int main() {
 		if (_getche() == 'y') {
 			isSaturdayAWeekend = true;
 		}
-		cout << endl;
+		cout << endl<<endl;
 
 		int startDateYear = startDate.getYear(); int endDateYear = endDate.getYear();
 		int amountOfYears = endDateYear - startDateYear + 1;
@@ -42,12 +39,12 @@ int main() {
 			holidays[i] = HolidayList(startDateYear + i);
 		}
 
-		//ÍÅ ÇÀÁÓÄÜ ÏÎÓÄÀËßÒÜ ÓÊÀÇÀÒÅËÈ
 
 		printHolidaysAndWorkdays(startDate,endDate,holidays,amountOfYears,isSaturdayAWeekend);
 
 
 
+		delete[] holidays;
 	}
 	catch(ExceptionDate& e)
 	{

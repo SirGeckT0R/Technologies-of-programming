@@ -92,7 +92,7 @@ void printHolidaysAndWorkdays(Date startDate, Date endDate, HolidayList* holiday
 	cout << "Amount of weekends in this period:" << amountOfWeekends << endl;
 
 	printListOfHolidays(listOfHolidays, listOfHolidaysIndex);
-
+	delete[] listOfHolidays;
 }
 
 bool checkForEndDate(Date currentDate, Date endDate) {
