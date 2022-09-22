@@ -4,19 +4,22 @@
 #include "Month.h"
 using namespace std;
 
-struct Holiday {
-	int day=1;
-	Month month=Month::JAN;
-	const char* name=new char[20];
-};
 
 
 const int HOLIDAY_AMOUNT = 12;
 
+struct Holiday {
+	int day=1;
+	Month month=Month::JAN;
+	string name;
+};
+
 class HolidayList {
 	Holiday holidays[HOLIDAY_AMOUNT];
 public:
-	HolidayList(int year);
+	HolidayList(int year=2022);
+	~HolidayList();
+	Holiday getHolidayByIndex(int index);
 private:
 	int* computeCatholicEasterDate(int year);
 	int* computeOrthodoxEasterDate(int year);
@@ -24,9 +27,4 @@ private:
 };	
 
 
-//
-//Holiday* HolidayList( int year);
-//int* computeOrthodoxEasterDate(int year);
-//int* computeCatholicEasterDate(int year);
-//int* computeRadunitsa(int EasterDay, int EasterMonth);
 
