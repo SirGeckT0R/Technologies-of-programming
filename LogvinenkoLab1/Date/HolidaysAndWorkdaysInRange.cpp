@@ -9,6 +9,9 @@ void printHolidaysAndWorkdays(Date startDate, Date endDate, HolidayList* holiday
 	int currentDay, currentMonth, currentYear;
 	int holidayIndex = 0;
 	string* listOfHolidays=new string[amountOfYears * HOLIDAY_AMOUNT];
+	int* listOfHolidaysDay=new int[amountOfYears * HOLIDAY_AMOUNT];
+	int* listOfHolidaysMonth = new int[amountOfYears * HOLIDAY_AMOUNT];
+	int* listOfHolidaysYear = new int[amountOfYears * HOLIDAY_AMOUNT];
 	int listOfHolidaysIndex = 0;
 	bool hasYearChanged = false;
 	bool isEndDate;
@@ -30,6 +33,9 @@ void printHolidaysAndWorkdays(Date startDate, Date endDate, HolidayList* holiday
 			Holiday currentHoliday = holidays[holidayIndex].getHolidayByIndex(i);
 			if (checkHoliday(currentHoliday, currentDay, currentMonth)) {
 				listOfHolidays[listOfHolidaysIndex] = currentHoliday.name;
+				listOfHolidaysDay[listOfHolidaysIndex] = currentHoliday.day;
+				listOfHolidaysMonth[listOfHolidaysIndex] = static_cast<int>(currentHoliday.month);
+				listOfHolidaysYear[listOfHolidaysIndex] = currentYear;
 				listOfHolidaysIndex++;
 				isHoliday = true;
 				amountOfWeekends++;
@@ -91,7 +97,7 @@ void printHolidaysAndWorkdays(Date startDate, Date endDate, HolidayList* holiday
 	cout << "Amount of working days in this period:" << amountOfWorkingDays << endl;
 	cout << "Amount of weekends in this period:" << amountOfWeekends << endl;
 
-	printListOfHolidays(listOfHolidays, listOfHolidaysIndex);
+	printListOfHolidays(listOfHolidays,listOfHolidaysDay,listOfHolidaysMonth,listOfHolidaysYear, listOfHolidaysIndex);
 	delete[] listOfHolidays;
 }
 
@@ -125,15 +131,15 @@ bool checkHoliday(Holiday holiday, int day, int month) {
 	return (day == currentHolidayDay && month == currentHolidayMonth);
 }
 
-void printListOfHolidays(string* holidays,int amountOfHolidays) {
+void printListOfHolidays(string* holidays,int* holidaysDay, int* holidaysMonth, int* holidaysYear,int amountOfHolidays) {
 	cout << "Holidays, that were in this period of time:" << endl;
 	for (int i = 0; i < amountOfHolidays; i++) {
-		cout << holidays[i];
+		cout << holidays[i] << " " << holidaysDay[i] << " "<<holidaysMonth[i] <<" " << holidaysYear[i];
 		if (i == amountOfHolidays - 1) {
-			cout << ". ";
+			cout << ". " << endl;;
 			break;
 		}
-		cout <<", ";
+		cout <<", " << endl;;
 	}
 	cout << endl;
 }

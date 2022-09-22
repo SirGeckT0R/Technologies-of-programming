@@ -9,4 +9,4 @@ void printHolidaysAndWorkdays(Date startDate, Date endDate,HolidayList *holidays
 bool checkForEndDate(Date currentDate, Date endDate);
 int getDayOfTheWeek(int day, int month, int year);
 bool checkHoliday(Holiday holiday, int day, int month);
-void printListOfHolidays(string* holidays, int amountOfHolidays);
+void printListOfHolidays(string* holidays, int* holidaysDay, int* holidaysMonth, int* holidaysYear, int amountOfHolidays);

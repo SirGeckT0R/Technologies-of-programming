@@ -34,8 +34,8 @@ void checkDates(Date& startDate, Date& endDate) {
 	int endMonth = static_cast<int>(endDate.getMonth());
 	int endYear = endDate.getYear();
 	bool areDatesWrong = false;
-	bool isDayIncorrect = ((endDay - startDay) < 0 && (endMonth - startMonth) >= 0) && (endYear - startYear) >= 0;
-	bool isMonthIncorrect = (endMonth - startMonth) < 0 && (endYear - startYear) >= 0;
+	bool isDayIncorrect = ((endDay - startDay) < 0 && (endMonth - startMonth) == 0) && (endYear - startYear) == 0;
+	bool isMonthIncorrect = (endMonth - startMonth) < 0 && (endYear - startYear) == 0;
 	bool isYearIncorrect = (endYear - startYear) < 0;
 
 	if (isDayIncorrect || isMonthIncorrect || isYearIncorrect) {
