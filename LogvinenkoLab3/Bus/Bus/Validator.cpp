@@ -3,7 +3,6 @@
 #include "Exception.h"
 
 
-
 bool Validator::isYearValid(int year) {
 	struct tm newtime;
 	time_t now = time(0);
@@ -16,26 +15,6 @@ bool Validator::isYearValid(int year) {
 	else return false;
 }
 
-bool Validator::isMonthValid(int month) {
-	if (month >= 1 && month <= 12)
-		return true;
-	else return false;
-}
-bool Validator::isLeap(int year) {
-	return !(year % 4 != 0 || year % 100 == 0 && year % 400 != 0);
-}
-
-bool Validator::isDayValid(int day, int month, int year) {
-	int lastMonthDay[12] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-	if (isYearValid(year) && isYearValid(month)) {
-		if (isLeap(year))
-			lastMonthDay[1] = 29;
-		if (day >= 1 && day <= lastMonthDay[month - 1])
-			return true;
-		else return false;
-	}
-	else return false;
-}
 
 bool Validator::isNumberValid(int number) {
 	if (number >= 0 && number <= MAX_NUMBER) {
