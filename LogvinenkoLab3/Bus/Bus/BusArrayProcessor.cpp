@@ -13,7 +13,7 @@ Bus* getArrayOfSameRouteBuses(Bus* buses,int size,int &newSize,int route) {
 	return arr;
 }
 
-Bus* getArrayOfYear(Bus* buses, int size, int& newSize, int year) {
+Bus* getArrayOfYearBuses(Bus* buses, int size, int& newSize, int year) {
 	Bus* arr = new Bus[size];
 	newSize = 0;
 	struct tm newtime;
@@ -30,7 +30,7 @@ Bus* getArrayOfYear(Bus* buses, int size, int& newSize, int year) {
 	return arr;
 }
 
-Bus* getArrayOfMileage(Bus* buses, int size, int& newSize, int mileage) {
+Bus* getArrayOfMileageBuses(Bus* buses, int size, int& newSize, int mileage) {
 	Bus* arr = new Bus[size];
 	newSize = 0;
 	for (int i = 0; i < size; i++) {

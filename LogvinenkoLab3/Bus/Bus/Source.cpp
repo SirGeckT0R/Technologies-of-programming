@@ -35,7 +35,7 @@ int main() {
 
 		int sizeOfYear = 0;
 		int year = 10;
-		Bus* arrayOfYear = getArrayOfYear(arrayOfBuses, size, sizeOfYear, year);
+		Bus* arrayOfYear = getArrayOfYearBuses(arrayOfBuses, size, sizeOfYear, year);
 		cout << "\nBuses, that were in exploitation more than " << year << " years: ";
 		for (int i = 0; i < sizeOfYear; i++) {
 			cout << "number " << arrayOfYear[i].getBusInfo().getNumber();
@@ -49,7 +49,7 @@ int main() {
 
 		int sizeOfMileage = 0;
 		int mileage = 10000;
-		Bus* arrayOfMileage = getArrayOfMileage(arrayOfBuses, size, sizeOfMileage, mileage);
+		Bus* arrayOfMileage = getArrayOfMileageBuses(arrayOfBuses, size, sizeOfMileage, mileage);
 		cout << "\nBuses, that have driven more than " << mileage << " km: ";
 		for (int i = 0; i < sizeOfMileage; i++) {
 			cout << "number " << arrayOfMileage[i].getBusInfo().getNumber();

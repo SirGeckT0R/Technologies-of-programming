@@ -27,6 +27,7 @@ Bus IBus::inputBus() {
 		temp=checkForNumber(cin, temp);
 	} while (!validator.isNumberValid(temp));
 	bus.setNumberRoute(temp);
+	cout << endl;
 
 	return bus;
 }
