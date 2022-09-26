@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "Exception.h"
+#include "HandleException.h"
 #include "Bus.h"
 #include "IBus.h"
 #include "BusInfo.h"
@@ -18,7 +18,7 @@ int main() {
 			size=checkForNumber(cin, size);
 		} while (size <= 0);
 		Bus* arrayOfBuses=createArrayOfBuses(size);
-
+	
 		int sizeOfRoute=0;
 		int route = 1;
 		Bus* arrayOfSameRoute = getArrayOfSameRouteBuses(arrayOfBuses, size, sizeOfRoute, route);
@@ -68,9 +68,9 @@ int main() {
 		delete[] arrayOfBuses;
 	}
 
-	catch(Exception& e)
+	catch(HandleException& e)
 	{
-		cerr << "exception caught: " << e.what() << '\n';
+		cerr << "Exception caught: " << e.what() << '\n';
 	}
 	system("pause");
 }

@@ -6,7 +6,6 @@ class Validator
 {
 public:
 	bool isYearValid(int year);
-	bool isNumberValid(int number);
-	bool isMileageValid(int mileage);
+	bool isNumberValid(int number,const int MAX_NUMBER);
 };
 

@@ -34,7 +34,7 @@ Bus* getArrayOfMileageBuses(Bus* buses, int size, int& newSize, int mileage) {
 	Bus* arr = new Bus[size];
 	newSize = 0;
 	for (int i = 0; i < size; i++) {
-		if (buses[i].getBusInfo().getMileage()>10000) {
+		if (buses[i].getBusInfo().getMileage()>mileage) {
 			arr[newSize] = buses[i];
 			newSize++;
 		}

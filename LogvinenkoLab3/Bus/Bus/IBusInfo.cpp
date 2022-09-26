@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include "IBusInfo.h"
 #include "Validator.h"
 using namespace std;
@@ -8,24 +9,23 @@ BusInfo IBusInfo::inputBusInfo() {
 	BusInfo info;
 	Validator validator;
 	int temp=0;
-	string str="";
-
-	ignoreAll(cin);
+	char input[MAX_LENGTH + 1];
+	char str[MAX_LENGTH];
 	do {
 		cout << "Enter number of the bus:";
 		cin >> temp;
 		temp = checkForNumber(cin, temp);
-	} while (!validator.isNumberValid(temp));
+	} while (!validator.isNumberValid(temp,MAX_NUMBER));
 	info.setNumber(temp);
 
-	ignoreAll(cin);
 	do {
-		cout << "Enter brand of the bus: ";
-		cin >> str;
-	} while (str.length() <= 0 || str.length() > MAX_LENGTH);
+		ignoreAll(cin);
+		cout << "Enter name of the bus driver: ";
+		cin >> setw(MAX_LENGTH + 1) >> input;
+	} while (strlen(input) <= 0 || strlen(input) >= MAX_LENGTH);
+	strncpy_s(str, MAX_LENGTH, input, MAX_LENGTH);
 	info.setBrand(str);
 
-	ignoreAll(cin);
 	do {
 		cout << "Enter the year of exploitation:";
 		cin >> temp;
@@ -33,12 +33,11 @@ BusInfo IBusInfo::inputBusInfo() {
 	} while (!validator.isYearValid(temp));
 	info.setYear(temp);
 
-	ignoreAll(cin);
 	do {
 		cout << "Enter the mileage:";
 		cin >> temp;
 		temp = checkForNumber(cin, temp);
-	} while (!validator.isMileageValid(temp));
+	} while (!validator.isNumberValid(temp,MAX_MILEAGE));
 	info.setMileage(temp);
 
 	return info;

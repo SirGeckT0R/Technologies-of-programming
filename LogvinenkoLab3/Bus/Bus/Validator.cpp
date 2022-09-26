@@ -1,6 +1,6 @@
 #include <time.h>
 #include "Validator.h"
-#include "Exception.h"
+#include "HandleException.h"
 
 
 bool Validator::isYearValid(int year) {
@@ -16,16 +16,10 @@ bool Validator::isYearValid(int year) {
 }
 
 
-bool Validator::isNumberValid(int number) {
+bool Validator::isNumberValid(int number,const int MAX_NUMBER) {
 	if (number >= 0 && number <= MAX_NUMBER) {
 		return true;
 	}
 	else return false;
 }
 
-bool Validator::isMileageValid(int mileage) {
-	if (mileage >= 0 && mileage <= MAX_MILEAGE) {
-		return true;
-	}
-	else return false;
-}

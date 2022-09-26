@@ -146,7 +146,7 @@
     <ClCompile Include="IBus.cpp" />
     <ClCompile Include="IBusInfo.cpp" />
     <ClCompile Include="Validator.cpp" />
-    <ClCompile Include="Exception.cpp" />
+    <ClCompile Include="HandleException.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -157,7 +157,7 @@
     <ClInclude Include="IBus.h" />
     <ClInclude Include="IBusInfo.h" />
     <ClInclude Include="Validator.h" />
-    <ClInclude Include="Exception.h" />
+    <ClInclude Include="HandleException.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

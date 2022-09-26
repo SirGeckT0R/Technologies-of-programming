@@ -4,24 +4,24 @@
 Bus::~Bus() {}
 
 Bus::Bus() {
-	this->nameOfDriver = "";
+	strcpy_s(this->nameOfDriver,2," ");
 	this->busInfo = BusInfo();
 	this->numberOfRoute = 0;
 }
 
-Bus::Bus(string nameOfDriver, int numberOfRoute, int numberOfBus, string brand, int yearOfExploitation, int mileage) {
+Bus::Bus(char* nameOfDriver, int numberOfRoute, int numberOfBus, char* brand, int yearOfExploitation, int mileage) {
 	setName(nameOfDriver);
 	setBusInfo(numberOfBus, brand, yearOfExploitation, mileage);
 	setNumberRoute(numberOfRoute);
 }
 
-Bus::Bus(string nameOfDriver, int numberOfRoute, BusInfo busInfo) {
+Bus::Bus(char* nameOfDriver, int numberOfRoute, BusInfo busInfo) {
 	setName(nameOfDriver);
 	setBusInfo(busInfo);
 	setNumberRoute(numberOfRoute);
 }
 
-string Bus::getName() {
+char* Bus::getName() {
 	return this->nameOfDriver;
 }
 
@@ -34,7 +34,8 @@ int Bus::getNumberRoute() {
 }
 
 string Bus::toString() {
-	string str = "Name of the bus driver: " + this->nameOfDriver
+	
+	string str = "Name of the bus driver: " + string(this->nameOfDriver)
 		+ "\n" + this->busInfo.toString() +
 		"Number of route: " + to_string(this->numberOfRoute);
 	return str;
@@ -45,7 +46,7 @@ char* Bus::toCharArray() {
 	char* str = new char[sizeStr];
 	char temp[sizeStr];
 	strcpy_s(str, sizeStr, "Name of the bus driver: ");
-	strcpy_s(temp, MAX_LENGTH + 1, this->nameOfDriver.c_str());
+	strcpy_s(temp, MAX_LENGTH + 1, this->nameOfDriver);
 	strcat_s(str, sizeStr, temp);
 	strcat_s(str, sizeStr, "\n");
 	strcat_s(str, sizeStr, this->busInfo.toCharArray());
@@ -56,16 +57,17 @@ char* Bus::toCharArray() {
 }
 
 
-void Bus::setName(string name) {
-	if (name.length() >= 0 && name.length() < MAX_LENGTH) {
-		this->nameOfDriver = name;
+void Bus::setName(char* name) {
+	int length = strlen(name);
+	if (length >= 0 && length < MAX_LENGTH) {
+		strcpy_s(this->nameOfDriver, length+1, name);
 	}
 	else {
-		throw Exception("The name isn't valid!");
+		throw HandleException("The name isn't valid!");
 	}
 }
 
-void Bus::setBusInfo(int number, string brand, int year, int mileage) {
+void Bus::setBusInfo(int number, char* brand, int year, int mileage) {
 	BusInfo info = BusInfo(number, brand, year, mileage);
 	this->busInfo = info;
 }
@@ -76,10 +78,10 @@ void Bus::setBusInfo(BusInfo info) {
 
 void Bus::setNumberRoute(int number) {
 	Validator validator;
-	if (validator.isNumberValid(number)) {
+	if (validator.isNumberValid(number,MAX_NUMBER)) {
 		this->numberOfRoute = number;
 	}
 	else {
-		throw Exception("The number of route isn't valid!");
+		throw HandleException("The number of route isn't valid!");
 	}
 }
