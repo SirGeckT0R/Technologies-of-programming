@@ -18,10 +18,7 @@
     <ClCompile Include="Source.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
-    <ClCompile Include="Date.cpp">
-      <Filter>Resource Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Exception.cpp">
+    <ClCompile Include="HandleException.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
     <ClCompile Include="Validator.cpp">
@@ -33,24 +30,42 @@
     <ClCompile Include="Bus.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="IBusInfo.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IBus.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BusFactory.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BusArrayProcessor.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Date.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Validator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Exception.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Month.h">
+    <ClInclude Include="HandleException.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Bus.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BusInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IBusInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IBus.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BusFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BusArrayProcessor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

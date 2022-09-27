@@ -1,11 +1,11 @@
 #pragma once
 
-class Exception
+class HandleException
 {
 private:
 	char str[200];
 public:
-	Exception(const char* str);
+	HandleException(const char* str);
 	const char* what();
 };
 

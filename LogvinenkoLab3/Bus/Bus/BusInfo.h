@@ -1,27 +1,28 @@
 #pragma once
 #include <iostream>
+#include "Validator.h"
 using namespace std;
 
 
 class BusInfo {
 	int numberOfBus;
-	string brand;
+	char brand[MAX_LENGTH];
 	int yearOfExploitation;
 	int mileage;
 public:
 	BusInfo();
-	BusInfo(int numberOfBus,string brand,int yearOfExploitation,int mileage);
+	BusInfo(int numberOfBus,char* brand,int yearOfExploitation,int mileage);
 	~BusInfo();
 
 	int getNumber();
-	string getBrand();
+	char* getBrand();
 	int getYear();
 	int getMileage();
 	string toString();
 	char* toCharArray();
 
 	void setNumber(int number);
-	void setBrand(string brand);
+	void setBrand(char* brand);
 	void setYear(int year);
 	void setMileage(int mileage);
 };

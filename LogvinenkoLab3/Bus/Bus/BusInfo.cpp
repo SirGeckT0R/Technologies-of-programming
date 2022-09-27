@@ -1,6 +1,6 @@
 #include "BusInfo.h"
 #include "Validator.h"
-#include "Exception.h"
+#include "HandleException.h"
 #include <string>
 
 
@@ -8,12 +8,12 @@ BusInfo::~BusInfo(){}
 
 BusInfo::BusInfo() {
 	this->numberOfBus = 0;
-	this->brand = "";
+	strcpy_s(this->brand,2," ");
 	this->yearOfExploitation = 0;
 	this->mileage = 0;
 }
 
-BusInfo::BusInfo(int number, string brand, int year, int mileage) {
+BusInfo::BusInfo(int number, char* brand, int year, int mileage) {
 	setNumber(number);
 	setBrand(brand);
 	setYear(year);
@@ -24,7 +24,7 @@ int BusInfo::getNumber() {
 	return this->numberOfBus;
 }
 
-string BusInfo::getBrand() {
+char* BusInfo::getBrand() {
 	return this->brand;
 }
 
@@ -38,7 +38,7 @@ int BusInfo::getMileage() {
 
 string BusInfo::toString() {
 	string str = "Number of the bus: " + to_string(this->numberOfBus)
-		+ "\nBrand of the bus: " + this->brand
+		+ "\nBrand of the bus: " + string(this->brand)
 		+"\nStart of exploitation: " + to_string(this->yearOfExploitation)
 		+ "\nMileage: " + to_string(this->mileage) + "\n";
 	return str;
@@ -53,7 +53,7 @@ char* BusInfo::toCharArray() {
 	_itoa_s(this->numberOfBus, temp, 10);
 	strcat_s(str, sizeStr, temp);
 	strcat_s(str, sizeStr, "\nBrand of the bus: ");
-	strcpy_s(temp, MAX_LENGTH+1,this->brand.c_str());
+	strcpy_s(temp, MAX_LENGTH+1,this->brand);
 	strcat_s(str, sizeStr, temp);
 	strcat_s(str, sizeStr, "\nStart of exploitation: ");
 	_itoa_s(this->yearOfExploitation, temp, 10);
@@ -66,30 +66,31 @@ char* BusInfo::toCharArray() {
 
 void BusInfo::setNumber(int number) {
 	Validator validator;
-	if (validator.isNumberValid(number)) {
+	if (validator.isNumberValid(number,MAX_NUMBER)) {
 		this->numberOfBus = number;
 	}
 	else {
-		throw Exception("The number of bus isn't valid!");
+		throw HandleException("The number of bus isn't valid!");
 	}
 }
 
 void BusInfo::setMileage(int mileage) {
 	Validator validator;
-	if (validator.isMileageValid(mileage)) {
+	if (validator.isNumberValid(mileage,MAX_MILEAGE)) {
 		this->mileage = mileage;
 	}
 	else {
-		throw Exception("The mileage isn't valid!");
+		throw HandleException("The mileage isn't valid!");
 	}
 }
 
-void BusInfo::setBrand(string brand) {
-	if (brand.length() >= 0 && brand.length() < MAX_LENGTH) {
-		this->brand = brand;
+void BusInfo::setBrand(char* brand) {
+	int length=strlen(brand);
+	if (length >= 0 && length < MAX_LENGTH) {
+		strcpy_s(this->brand, length +1, brand);
 	}
 	else {
-		throw Exception("The brand isn't valid!");
+		throw HandleException("The brand isn't valid!");
 	}
 }
 
@@ -99,6 +100,6 @@ void BusInfo::setYear(int year) {
 		this->yearOfExploitation=year;
 	}
 	else {
-		throw Exception("The year of exploitation isn't valid!");
+		throw HandleException("The year of exploitation isn't valid!");
 	}
 }
