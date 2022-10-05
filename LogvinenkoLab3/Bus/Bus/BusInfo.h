@@ -14,6 +14,8 @@ public:
 	BusInfo(int numberOfBus,char* brand,int yearOfExploitation,int mileage);
 	~BusInfo();
 
+	bool areEqual(BusInfo info);
+
 	int getNumber();
 	char* getBrand();
 	int getYear();

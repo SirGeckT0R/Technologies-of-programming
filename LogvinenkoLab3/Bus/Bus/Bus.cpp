@@ -21,6 +21,25 @@ Bus::Bus(char* nameOfDriver, int numberOfRoute, BusInfo busInfo) {
 	setNumberRoute(numberOfRoute);
 }
 
+bool Bus::areEqual(Bus bus) {
+	const char* str=bus.getName();
+	if (strcmp(this->getName(), str) != 0) {
+		return false;
+	}
+
+	BusInfo info = bus.getBusInfo();
+	if (!this->getBusInfo().areEqual(info)) {
+		return false;
+	}
+
+	int num = bus.getNumberRoute();
+	if (this->getNumberRoute() != num) {
+		return false;
+	}
+
+	return true;
+}
+
 char* Bus::getName() {
 	return this->nameOfDriver;
 }

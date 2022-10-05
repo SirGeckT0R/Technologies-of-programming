@@ -16,6 +16,8 @@ public:
 	Bus(char* nameOfDriver, int numberOfRoute, BusInfo busInfo);
 	~Bus();
 
+	bool areEqual(Bus bus);
+
 	char* getName();
 	BusInfo getBusInfo();
 	int getNumberRoute();

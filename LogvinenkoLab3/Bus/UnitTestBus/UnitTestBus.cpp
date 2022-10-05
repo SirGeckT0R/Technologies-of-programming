@@ -6,12 +6,8 @@
 #include "../Bus/BusInfo.cpp"
 #include "../Bus/HandleException.h"
 #include "../Bus/HandleException.cpp"
-#include "../Bus/BusArrayProcessor.h"
-#include "../Bus/BusArrayProcessor.cpp"
 #include "../Bus/Validator.h"
 #include "../Bus/Validator.cpp"
-#include "../Bus/BusFactory.h"
-#include "../Bus/BusFactory.cpp"
 #include "../Bus/Month.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
@@ -105,6 +101,33 @@ namespace UnitTestBus
 		{
 			auto func = [] { BusInfo info=BusInfo(-1,"",1,1); };
 			Assert::ExpectException<HandleException>(func);
+		}
+
+		//BUSINFO AREEQUAL()
+		TEST_METHOD(TestBusInfoAreEqualPositive)
+		{
+			BusInfo info1, info2;
+			bool actual = info1.areEqual(info2);
+			bool expected = true;
+			Assert::AreEqual(actual,expected);
+		}
+
+		TEST_METHOD(TestBusInfoAreEqualArgsPositive)
+		{
+			BusInfo info1 = BusInfo(1, "f", 2, 4);
+			BusInfo info2 = BusInfo(1, "f", 2, 4);
+			bool actual = info1.areEqual(info2);
+			bool expected = true;
+			Assert::AreEqual(actual, expected);
+		}
+
+		TEST_METHOD(TestBusInfoAreEqualArgsNegative)
+		{
+			BusInfo info1 = BusInfo(1, "d", 2, 1);
+			BusInfo info2 = BusInfo(1, "f", 2, 4);
+			bool actual = info1.areEqual(info2);
+			bool expected = false;
+			Assert::AreEqual(actual, expected);
 		}
 
 		//BUSINFO SETNUMBER()
@@ -311,6 +334,53 @@ namespace UnitTestBus
 		{
 			auto func = [] { Bus info = Bus("f", -1, 1, "d", 2000, 1); };
 			Assert::ExpectException<HandleException>(func);
+		}
+
+		//BUS AREEQUAL()
+		TEST_METHOD(TestBusAreEqualPositive)
+		{
+			Bus bus1, bus2;
+			bool actual = bus1.areEqual(bus2);
+			bool expected = true;
+			Assert::AreEqual(actual, expected);
+		}
+
+		TEST_METHOD(TestBusAreEqualArgsPositive)
+		{
+			Bus bus1 = Bus("a",3,1, "f", 2, 4);
+			Bus bus2 = Bus("a",3,1, "f", 2, 4);
+			bool actual = bus1.areEqual(bus2);
+			bool expected = true;
+			Assert::AreEqual(actual, expected);
+		}
+
+		TEST_METHOD(TestBusAreEqualArgsBusInfoPositive)
+		{
+			BusInfo info1, info2;
+			Bus bus1 = Bus("a", 3, info1);
+			Bus bus2 = Bus("a", 3,info2);
+			bool actual = bus1.areEqual(bus2);
+			bool expected = true;
+			Assert::AreEqual(actual, expected);
+		}
+
+		TEST_METHOD(TestBusAreEqualArgsNegative)
+		{
+			Bus bus1 = Bus("b", 3, 1, "f", 2, 4);
+			Bus bus2 = Bus("a", 3, 1, "f", 2, 4);
+			bool actual = bus1.areEqual(bus2);
+			bool expected = false;
+			Assert::AreEqual(actual, expected);
+		}
+
+		TEST_METHOD(TestBusAreEqualArgsBusInfoNegative)
+		{
+			BusInfo info1, info2;
+			Bus bus1 = Bus("a", 1, info1);
+			Bus bus2 = Bus("a", 3, info2);
+			bool actual = bus1.areEqual(bus2);
+			bool expected = false;
+			Assert::AreEqual(actual, expected);
 		}
 
 		//BUS SETNAME()

@@ -20,6 +20,30 @@ BusInfo::BusInfo(int number, char* brand, int year, int mileage) {
 	setMileage(mileage);
 }
 
+bool BusInfo::areEqual(BusInfo info) {
+	int num = info.getNumber();
+	if (this->getNumber() != num) {
+		return false;
+	}
+
+	const char* str = info.getBrand();
+	if (strcmp(this->getBrand(), str)!=0) {
+		return false;
+	}
+
+	int year = info.getYear();
+	if (this->getYear() != year) {
+		return false;
+	}
+
+	int mileage = info.getMileage();
+	if (this->getMileage() != mileage) {
+		return false;
+	}
+
+	return true;
+};
+
 int BusInfo::getNumber() {
 	return this->numberOfBus;
 }
