@@ -17,6 +17,50 @@ namespace UnitTestBus
 	TEST_CLASS(UnitTestBus)
 	{
 	public:
+		//NEW TESTS
+		TEST_METHOD(TestBusGetNamePositive) {
+			Bus bus;
+			bus.setName("Anton");
+
+			const char* expected = "Anton";
+			const char* actual = bus.getName();
+			Assert::AreEqual(expected, actual);
+
+		}
+
+		TEST_METHOD(TestBusGetRoutePositive) {
+			Bus bus;
+			bus.setNumberRoute(123);
+
+			int expected = 123;
+			int actual = bus.getNumberRoute();
+			Assert::AreEqual(expected, actual);
+
+		}
+
+		TEST_METHOD(TestBusGetRouteNegative) {
+			Bus bus;
+			bus.setNumberRoute(123);
+
+			int expected = 12;
+			int actual = bus.getNumberRoute();
+			Assert::AreNotEqual(expected, actual);
+
+		}
+
+		TEST_METHOD(TestValidatorYearPositiveIsTrue) {
+			Validator val;
+			bool actual = val.isYearValid(1);
+			Assert::IsTrue(actual);
+		}
+
+		TEST_METHOD(TestValidatorYearPositiveIsFalse) {
+			Validator val;
+			bool actual = val.isYearValid(-1);
+			Assert::IsFalse(actual);
+		}
+
+		
 		//VALIDATOR ISYEARVALID()
 		TEST_METHOD(TestValidatorYearPositive) {
 			Validator val;

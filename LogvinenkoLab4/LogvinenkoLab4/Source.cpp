@@ -16,8 +16,12 @@ int main()
 	localtime_s(&timeinfo, &numb_sec); 
 	
 	char loc[MAX];
-	cout << "Enter format, in which to present date: ";
-	cin >> loc;
+
+	do {
+		cout << "Enter format, in which to present date(rus, ENG or usa): ";
+		cin >> loc;
+	} while (strcmp(loc, "rus")!=0 && strcmp(loc, "ENG")!=0 && strcmp(loc, "usa")!=0);
+
 	setlocale(LC_ALL, loc);
 	strftime(buffer, 80, "%c", &timeinfo);
 	cout << "Date: " << buffer << endl;
