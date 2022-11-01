@@ -1,11 +1,12 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
 class Fraction {
-	int* fraction;
+	vector<int> fraction;
 public:
 	Fraction();
 	Fraction(int num, int den);
@@ -13,7 +14,7 @@ public:
 	Fraction(const Fraction& inputFraction);
 	~Fraction();
 
-	int* getFraction();
+	vector<int> getFraction();
 	int getNum();
 	int getDen();
 
@@ -25,14 +26,22 @@ public:
 	Fraction subtractFraction(const Fraction inputFraction);
 	Fraction multiplyFraction(const Fraction inputFraction);
 	Fraction divideFraction(const Fraction inputFraction);
+	void simplifyFraction();
 
 	Fraction operator+(const Fraction);
 	Fraction operator-(const Fraction);
 	Fraction operator*(const Fraction);
 	Fraction operator/(const Fraction);
+	void operator=(const Fraction);
+	bool operator==(Fraction inputFraction);
+	bool operator>(const Fraction inputFraction);
+	bool operator>=(Fraction inputFraction);
+	bool operator<=(const Fraction inputFraction);
+	bool operator<(const Fraction inputFraction);
+	bool operator!=(const Fraction inputFraction);
 
-	friend ostream& operator<<(ostream& os, const Fraction&);
-	friend istream& operator>>(istream&, Fraction&);
+	friend ostream& operator<<(ostream& os, const Fraction& fraction);
+	friend istream& operator>>(istream& is, Fraction& fraction);
 
 	char* toString() const;
 }; 

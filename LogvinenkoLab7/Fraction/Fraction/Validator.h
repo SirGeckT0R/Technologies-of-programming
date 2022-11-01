@@ -1,4 +1,5 @@
 #pragma once
+#define MAX_LEN 256
 
 class Validator {
 public:

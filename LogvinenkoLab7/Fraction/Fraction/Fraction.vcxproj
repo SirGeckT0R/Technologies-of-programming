@@ -127,14 +127,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ConsoleFractionHelper.cpp" />
     <ClCompile Include="Fraction.cpp" />
+    <ClCompile Include="FractionArray.cpp" />
     <ClCompile Include="FractionException.cpp" />
+    <ClCompile Include="FractionHandler.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="Validator.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ConsoleFractionHelper.h" />
     <ClInclude Include="Fraction.h" />
+    <ClInclude Include="FractionArray.h" />
     <ClInclude Include="FractionException.h" />
+    <ClInclude Include="FractionHandler.h" />
     <ClInclude Include="Validator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
