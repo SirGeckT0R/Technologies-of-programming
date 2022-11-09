@@ -2,7 +2,7 @@
 
 Node::Node(): value(0), next(nullptr) {}
 
-Node::Node(int value_): value(value_), next(nullptr) {}
+Node::Node(double value_): value(value_), next(nullptr) {}
 
 Node::~Node() {}
 

@@ -4,7 +4,6 @@
 #include "./ConsoleFractionHelper.h"
 #include <math.h>
 
-bool validateDenumerator(int den);
 
 Fraction::Fraction() {
 	fraction = { 0,1 };

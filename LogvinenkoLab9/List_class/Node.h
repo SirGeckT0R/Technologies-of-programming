@@ -6,10 +6,10 @@ using namespace std;
 class Node
 {
 public:
-	int value;
+	double value;
 	Node* next;
 	Node();
-	Node(int);
+	Node(double);
 	~Node();
 	friend ostream& operator<<(ostream&, const Node);
 };
