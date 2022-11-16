@@ -40,15 +40,10 @@ int main() {
 	}
 	cout << "\nOriginal list: "<<list << endl;
 
-	cout << "1 way of reversing a list(through pointers):"<<endl;
 	List list2 = list;
 	list2.reverseList();
 	cout << "Reversed list: " << list2 << endl;
 
-	cout << "2 way of reversing a list(through vector reverse):" << endl;
-	vector<double> listVect = list.getList();
-	List list3=ListHandler::reverseOfList(list);
-	cout << "Reversed list: " << list3 << endl;
 
 	cout << "\nEnter file, to where you want to write list(example: output.txt): ";
 	cin >> filename;

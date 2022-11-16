@@ -32,14 +32,10 @@ Fraction* FractionHandler::fractionArrayFromConsole(int size) {
 	return rezArray;
 }
 
-Fraction* FractionHandler::fractionArrayFromFile(int size) {
+Fraction* FractionHandler::fractionArrayFromFile(char* filename,int size) {
 	Fraction* rezArray = new Fraction[size];
 	ifstream fin;
-	char filename[256];
-
-
-	cout << "\nEnter filename: ";
-	cin >> filename;
+	
 	fin.open(filename);
 
 	if (fin.is_open()) {

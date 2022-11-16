@@ -23,10 +23,3 @@ void ListHandler::fillListWithRandomNumbersNotDescending(List& list,int size) {
 	}
 	delete[] randomArray;
 }
-
- List ListHandler::reverseOfList(List& list) {
-	 vector<double> listVect = list.getList();
-	 reverse(listVect.begin(), listVect.end());
-	List list2=List(listVect);
-	return list2;
-}

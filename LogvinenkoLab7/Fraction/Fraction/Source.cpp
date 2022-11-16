@@ -25,14 +25,11 @@ int main() {
 			size = FractionArray::checkForNumber(cin, size);
 		} while (size <= 0);
 
-		bool fromConsole=false;
-		cout << "How do you want to enter the array: from console or from file?(c,f)";
-		if (_getche() == 'c') {
-			fromConsole = true;
-		}
-
-		
-		Fraction* fractionArray = fromConsole ? FractionHandler::fractionArrayFromConsole(size) : FractionHandler::fractionArrayFromFile(size);
+	
+		char filename[256];
+		cout << "\nEnter filename(example: fraction.txt): ";
+		cin >> filename;
+		Fraction* fractionArray = FractionHandler::fractionArrayFromFile(filename,size);
 
 		FractionArray::addToEvenElementOddElement(fractionArray, size);
 
