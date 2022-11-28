@@ -27,6 +27,15 @@
     <ClCompile Include="ExceptionCargo.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="Car.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Train.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Plane.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cargo.h">
@@ -39,6 +48,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Car.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Train.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Plane.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

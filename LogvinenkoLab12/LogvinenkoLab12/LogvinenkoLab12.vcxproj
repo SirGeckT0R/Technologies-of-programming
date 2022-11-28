@@ -127,15 +127,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Car.cpp" />
     <ClCompile Include="Cargo.cpp" />
     <ClCompile Include="ExceptionCargo.cpp" />
+    <ClCompile Include="Plane.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Train.cpp" />
     <ClCompile Include="ValidatorCargo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Car.h" />
     <ClInclude Include="Cargo.h" />
     <ClInclude Include="ExceptionCargo.h" />
+    <ClInclude Include="Plane.h" />
+    <ClInclude Include="Train.h" />
     <ClInclude Include="ValidatorCargo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

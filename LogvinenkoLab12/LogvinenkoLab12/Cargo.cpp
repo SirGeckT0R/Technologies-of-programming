@@ -1,10 +1,11 @@
 #include "./Cargo.h"
 
-Cargo::Cargo() : speed(0.0), maxWeight(0.0) { }
+Cargo::Cargo() : speed(0.0), maxWeight(0.0),destinationCity("") { }
 
-Cargo::Cargo(double speed, double maxWeight){
+Cargo::Cargo(double speed, double maxWeight,string city){
 	setSpeed(speed);
 	setMaxWeight(maxWeight);
+	setDestinationCity(city);
 }
 
 double Cargo::getSpeed() {
@@ -13,6 +14,11 @@ double Cargo::getSpeed() {
 
 double Cargo::getMaxWeight() {
 	return maxWeight;
+}
+
+string Cargo::getDestinationCity()
+{
+	return destinationCity;
 }
 
 void Cargo::setSpeed(double newSpeed) {
@@ -29,8 +35,13 @@ void Cargo::setMaxWeight(double newWeight) {
 	else throw ExceptionCargo("Max weight parameter is not valid!");
 }
 
-string Cargo::toString() const {
-	string str = "Speed: " + to_string(speed) + "\nMax weight: " + to_string(maxWeight);
+void Cargo::setDestinationCity(string city)
+{
+	destinationCity = city;
+}
+
+string Cargo::toString() {
+	string str = "Speed: " + to_string(speed) + "\nMax weight: " + to_string(maxWeight) + "\nDestination city: " + destinationCity;
 	return str;
 }
 

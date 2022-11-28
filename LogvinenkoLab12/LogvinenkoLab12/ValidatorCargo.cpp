@@ -6,3 +6,24 @@ bool ValidatorCargo::isNumberValid(double num) {
 	}
 	return false;
 }
+
+bool ValidatorCargo::isNumberOfWheelsValid(int num) {
+	if (num >= 0 && num<=MAX_NUM_WHEELS) {
+		return true;
+	}
+	return false;
+}
+
+bool ValidatorCargo::isNumberOfCartsValid(int num) {
+	if (num >= 0 && num <= MAX_NUM_CARTS) {
+		return true;
+	}
+	return false;
+}
+
+bool ValidatorCargo::isNumberOfEnginesValid(int num) {
+	if (num >= 0 && num <= MAX_NUM_ENGINES) {
+		return true;
+	}
+	return false;
+}
