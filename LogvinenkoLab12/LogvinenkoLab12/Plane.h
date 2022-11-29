@@ -8,8 +8,8 @@ class Plane : public Cargo {
 	int numberOfEngines;
 public:
 	Plane();
-	Plane(double speed, double weight, string city, int engines);
-	~Plane();
+	Plane(double speed, double weight, string city, double price,int engines);
+	virtual ~Plane();
 
 	int getNumberOfEngines();
 

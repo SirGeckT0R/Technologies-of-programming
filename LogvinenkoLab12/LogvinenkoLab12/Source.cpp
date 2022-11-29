@@ -4,26 +4,39 @@
 #include "./Plane.h"
 #include "./Car.h"
 #include "./ExceptionCargo.h"
+#include "./CargoHandler.h"
 
 using namespace std;
 
 int main() {
 	try {
-		Car car(1,2,"Toronto",4);
+		Car car(1,2,"Toronto",5.5,4);
 
-		Train train(11242, 2313, "Chicago", 68);
+		Train train(100, 2313, "Chicago",935.12, 68);
 
-		Plane plane(20000, 1234, "New York", 2);
+		Plane plane(200, 1234, "Chicago",500, 2);
 
-		const int size = 3;
-		Cargo** array=new Cargo*[size];
-		array[0] = &car;
-		array[1] = &train;
-		array[2] = &plane;
+		vector<Cargo*> array;
+		array.push_back(&car);
+		array.push_back(&train);
+		array.push_back(&plane);
 
-		for (int i = 0; i < size; i++) {
-			cout << endl << array[i]->toString() << endl;
-		}
+
+		CargoHandler::outputCargo(array);
+		
+		string city = "";
+		cout << "Enter the origin city, from which to start transfer: ";
+		cin >> city;
+
+		int distance = 0;
+		do {
+			cin.clear();
+			cout << "Enter distance(positive number): ";
+			cin >> distance;
+		} while (distance < 0);
+
+		vector<double> timeAndPrice = CargoHandler::timeAndPriceOfTransferFromCity(array, city, distance);
+		cout << "\nTime: " << timeAndPrice[0]<<" hours" << endl << "Price: " << timeAndPrice[1] << " dollars" << endl;
 	}
 	catch (ExceptionCargo& e) {
 		cout <<"Exception caught:"<< e.what() << endl;

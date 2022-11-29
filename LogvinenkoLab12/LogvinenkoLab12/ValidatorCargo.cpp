@@ -7,6 +7,13 @@ bool ValidatorCargo::isNumberValid(double num) {
 	return false;
 }
 
+bool ValidatorCargo::isPriceValid(double num) {
+	if (num >= 0 && num <= MAX_PRICE) {
+		return true;
+	}
+	return false;
+}
+
 bool ValidatorCargo::isNumberOfWheelsValid(int num) {
 	if (num >= 0 && num<=MAX_NUM_WHEELS) {
 		return true;

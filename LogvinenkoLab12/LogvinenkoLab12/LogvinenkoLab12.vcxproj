@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="Car.cpp" />
     <ClCompile Include="Cargo.cpp" />
+    <ClCompile Include="CargoHandler.cpp" />
     <ClCompile Include="ExceptionCargo.cpp" />
     <ClCompile Include="Plane.cpp" />
     <ClCompile Include="Source.cpp" />
@@ -138,6 +139,7 @@
   <ItemGroup>
     <ClInclude Include="Car.h" />
     <ClInclude Include="Cargo.h" />
+    <ClInclude Include="CargoHandler.h" />
     <ClInclude Include="ExceptionCargo.h" />
     <ClInclude Include="Plane.h" />
     <ClInclude Include="Train.h" />

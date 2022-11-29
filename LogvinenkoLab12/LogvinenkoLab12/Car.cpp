@@ -4,7 +4,7 @@ Car::Car(): Cargo(),numberOfWheels(0)
 {
 }
 
-Car::Car(double speed, double weight, string city, int wheels) : Cargo(speed,weight,city)
+Car::Car(double speed, double weight, string city,double price, int wheels) : Cargo(speed,weight,city,price)
 {
 	setNumberOfWheels(wheels);
 }

@@ -6,19 +6,22 @@ using namespace std;
 
 class Cargo {
 protected:
-	double speed;
+	double speed; //kilometers per hour
 	double maxWeight;
-	string destinationCity;
+	string originCity;
+	double price; 
 public:
 	Cargo();
-	Cargo(double speed, double maxWeight,string city);
+	Cargo(double speed, double maxWeight,string city,double price);
 	virtual ~Cargo();
 	double getMaxWeight();
-	string getDestinationCity();
+	string getOriginCity();
 	double getSpeed();
+	double getPrice();
 	void setSpeed(double speed);
 	void setMaxWeight(double maxWeight);
-	void setDestinationCity(string city);
+	void setOriginCity(string city);
+	void setPrice(double price);
 
 	virtual string toString();
 };

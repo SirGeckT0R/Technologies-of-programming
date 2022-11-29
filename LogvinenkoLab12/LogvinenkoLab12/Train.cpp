@@ -4,7 +4,7 @@ Train::Train() : Cargo(), numberOfCarts(0)
 {
 }
 
-Train::Train(double speed, double weight, string city, int carts) : Cargo(speed,weight,city)
+Train::Train(double speed, double weight, string city,double price, int carts) : Cargo(speed,weight,city,price)
 {
 	setNumberOfCarts(carts);
 }

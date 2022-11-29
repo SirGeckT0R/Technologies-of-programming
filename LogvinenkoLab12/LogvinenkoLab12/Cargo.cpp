@@ -1,24 +1,30 @@
 #include "./Cargo.h"
 
-Cargo::Cargo() : speed(0.0), maxWeight(0.0),destinationCity("") { }
+Cargo::Cargo() : speed(0.0), maxWeight(0.0),originCity(""),price(0) { }
 
-Cargo::Cargo(double speed, double maxWeight,string city){
+Cargo::Cargo(double speed, double maxWeight,string city,double price){
 	setSpeed(speed);
 	setMaxWeight(maxWeight);
-	setDestinationCity(city);
+	setOriginCity(city);
+	setPrice(price);
 }
 
 double Cargo::getSpeed() {
 	return speed;
 }
 
+double Cargo::getPrice()
+{
+	return price;
+}
+
 double Cargo::getMaxWeight() {
 	return maxWeight;
 }
 
-string Cargo::getDestinationCity()
+string Cargo::getOriginCity()
 {
-	return destinationCity;
+	return originCity;
 }
 
 void Cargo::setSpeed(double newSpeed) {
@@ -35,13 +41,21 @@ void Cargo::setMaxWeight(double newWeight) {
 	else throw ExceptionCargo("Max weight parameter is not valid!");
 }
 
-void Cargo::setDestinationCity(string city)
+void Cargo::setOriginCity(string city)
 {
-	destinationCity = city;
+	originCity = city;
+}
+
+void Cargo::setPrice(double priceNew)
+{
+	if (ValidatorCargo::isPriceValid(priceNew)) {
+		price = priceNew;
+	}
+	else throw ExceptionCargo("Price parameter is not valid!");
 }
 
 string Cargo::toString() {
-	string str = "Speed: " + to_string(speed) + "\nMax weight: " + to_string(maxWeight) + "\nDestination city: " + destinationCity;
+	string str = "Speed: " + to_string(speed) + "\nMax weight: " + to_string(maxWeight) + "\nOrigin city: " + originCity + "\nPrice for one hour: " + to_string(price);
 	return str;
 }
 

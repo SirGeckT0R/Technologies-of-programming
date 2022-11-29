@@ -8,8 +8,8 @@ class Train : public Cargo {
 	int numberOfCarts;
 public:
 	Train();
-	Train(double speed, double weight, string city, int carts);
-	~Train();
+	Train(double speed, double weight, string city,double price, int carts);
+	virtual ~Train();
 
 	int getNumberOfCarts();
 

@@ -4,7 +4,7 @@ Plane::Plane():Cargo(),numberOfEngines(0)
 {
 }
 
-Plane::Plane(double speed, double weight, string city, int engines) :Cargo(speed,weight,city)
+Plane::Plane(double speed, double weight, string city,double price, int engines) :Cargo(speed,weight,city,price)
 {
 	setNumberOfEngines(engines);
 }
