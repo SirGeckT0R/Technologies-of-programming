@@ -12,5 +12,7 @@ public:
 	virtual ~Car();
 	int getNumberOfWheels();
 	void setNumberOfWheels(int wheels);
+
+	void outputFields();
 	string toString();
 };

@@ -15,5 +15,6 @@ public:
 
 	void setNumberOfCarts(int carts);
 
+	void outputFields();
 	string toString();
 };

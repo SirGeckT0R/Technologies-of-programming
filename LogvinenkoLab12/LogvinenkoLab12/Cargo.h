@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 #include <string>
 #include "./ValidatorCargo.h"
 #include "./ExceptionCargo.h"
@@ -23,5 +24,6 @@ public:
 	void setOriginCity(string city);
 	void setPrice(double price);
 
+	virtual void outputFields();
 	virtual string toString();
 };

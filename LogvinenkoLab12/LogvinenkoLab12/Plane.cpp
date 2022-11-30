@@ -26,6 +26,12 @@ void Plane::setNumberOfEngines(int engines)
 	else throw ExceptionCargo("Number of engines on the plane isn't valid!");
 }
 
+void Plane::outputFields()
+{
+
+	cout << "\nPlane: \n" << toString() << endl;
+}
+
 string Plane::toString()
 {
 	string str;

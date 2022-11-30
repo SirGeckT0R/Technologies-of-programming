@@ -26,6 +26,11 @@ void Train::setNumberOfCarts(int carts)
 	else throw ExceptionCargo("Number of carts in train isn't valid!");
 }
 
+void Train::outputFields()
+{
+	cout << "\nTrain: \n" << toString() << endl;
+}
+
 string Train::toString()
 {
 	string str;

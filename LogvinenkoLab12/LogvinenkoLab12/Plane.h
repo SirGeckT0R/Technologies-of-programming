@@ -15,5 +15,6 @@ public:
 
 	void setNumberOfEngines(int engines);
 
+	void outputFields();
 	string toString();
 };

@@ -3,7 +3,7 @@
 void CargoHandler::outputCargo(vector<Cargo*> array)
 {
 	for (int i = 0; i < array.size(); i++) {
-		cout << endl << array[i]->toString() << endl;
+		array[i]->outputFields();
 	}
 }
 

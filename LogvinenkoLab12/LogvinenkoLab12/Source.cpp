@@ -25,7 +25,7 @@ int main() {
 		CargoHandler::outputCargo(array);
 		
 		string city = "";
-		cout << "Enter the origin city, from which to start transfer: ";
+		cout << "\nEnter the origin city, from which to start transfer: ";
 		cin >> city;
 
 		int distance = 0;

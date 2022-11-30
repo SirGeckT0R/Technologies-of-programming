@@ -28,6 +28,11 @@ void Car::setNumberOfWheels(int wheels)
 	else throw ExceptionCargo("Number of wheels in the car isn't valid!");
 }
 
+void Car::outputFields()
+{
+	cout << "\nCar: \n" << toString() << endl;
+}
+
 string Car::toString()
 {
 	string str;

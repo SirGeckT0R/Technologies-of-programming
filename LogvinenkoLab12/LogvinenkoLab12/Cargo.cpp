@@ -54,6 +54,11 @@ void Cargo::setPrice(double priceNew)
 	else throw ExceptionCargo("Price parameter is not valid!");
 }
 
+void Cargo::outputFields()
+{
+	cout << endl << toString() << endl;
+}
+
 string Cargo::toString() {
 	string str = "Speed: " + to_string(speed) + "\nMax weight: " + to_string(maxWeight) + "\nOrigin city: " + originCity + "\nPrice for one hour: " + to_string(price);
 	return str;
